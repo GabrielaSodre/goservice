@@ -1,21 +1,21 @@
 package com.soulcode.goserviceapp.domain;
 
 import com.soulcode.goserviceapp.domain.enums.Perfil;
+import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.validation.constraints.Min;
-import org.hibernate.annotations.ManyToAny;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+@Entity
 public class Prestador extends Usuario{
-
     private String descricao;
 
-    @Min(value =10, message = "O valor mínimo de taxa cobrada por hora é 10")
+    @Min(value = 10, message = "O valor minimo de taxa cobrada por hora é 10.")
     private Float taxaPorHora;
 
     @ManyToMany
@@ -84,14 +84,13 @@ public class Prestador extends Usuario{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Prestador prestador = (Prestador) o;
-        return Objects.equals(descricao, prestador.descricao) &&
+        return Objects.equals(descricao, prestador.descricao)&&
                 Objects.equals(taxaPorHora, prestador.taxaPorHora) &&
                 Objects.equals(especialidades, prestador.especialidades);
-
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(descricao, taxaPorHora, especialidades);
     }
+
 }

@@ -6,7 +6,7 @@ import jakarta.validation.constraints.NotBlank;
 import java.util.Objects;
 
 @Entity
-@Table le(name="servico")
+@Table (name="servico")
 public class Servico {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -72,7 +72,7 @@ public class Servico {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Servico servico = (Servico) o;
-        return Objects.equals((id, servico.id) &&
+        return Objects.equals(id, servico.id) &&
                 Objects.equals(nome, servico.nome) &&
                 Objects.equals(categoria, servico.categoria);
     }
