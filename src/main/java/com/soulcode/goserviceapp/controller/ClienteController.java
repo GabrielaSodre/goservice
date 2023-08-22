@@ -5,10 +5,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping(value = "/prestador")
-public class PretadorController {
+@RequestMapping(value = "/cliente")
+public class ClienteController {
 
-    @GetMapping(value = "/daods")
-    public String dados
-        return dadosPrestador
+    @GetMapping(value = "/dados")
+    public String dados(){
+        return "dadosCliente";
+    }
 }

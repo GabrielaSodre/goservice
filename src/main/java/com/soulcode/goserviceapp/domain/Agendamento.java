@@ -11,7 +11,7 @@ import java.time.LocalTime;
 import java.util.Objects;
 
 @Entity
-@Table(name = "agendamentos")
+@Table(name = "agendamento")
 public class Agendamento {
 
     @Id
